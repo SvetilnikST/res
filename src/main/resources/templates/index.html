@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>City Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>City List</h1>
+    <a href="/new">Create New City</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>City ID</th>
+            <th>Name</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="city : ${listCities}">
+            <td th:text="${city.id}">City ID</td>
+            <td th:text="${city.name}">Name</td>
+            <td th:text="${city.message}">Message</td>
+            <td>
+                <a th:href="@{'/edit/' + ${city.id}}">Edit</a>
+                <a th:href="@{'/delete/' + ${city.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
