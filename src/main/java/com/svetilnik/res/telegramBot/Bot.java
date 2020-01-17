@@ -38,7 +38,7 @@ public class Bot extends TelegramLongPollingBot {
                 SendMessage outMessage = new SendMessage();
                 outMessage.setChatId(inMessage.getChatId());
 
-                String inMess = inMessage.getText().toLowerCase();
+                String inMess = inMessage.getText().toUpperCase();
                 List<City> list = cityService.findByName(inMess);
 
                 String message = "";

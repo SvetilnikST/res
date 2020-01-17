@@ -24,7 +24,7 @@ public class CityService {
     public void save(City city) {
         City cityEdit = new City();
         cityEdit.setId(city.getId());
-        cityEdit.setName(city.getName().toLowerCase());
+        cityEdit.setName(city.getName().toUpperCase());
         cityEdit.setMessage(city.getMessage());
         cityRepository.save(cityEdit);
     }
