@@ -37,10 +37,14 @@ public class Bot extends TelegramLongPollingBot {
                 Message inMessage = update.getMessage();
                 SendMessage outMessage = new SendMessage();
                 outMessage.setChatId(inMessage.getChatId());
-                String inMess = inMessage.getText();
+
+                String inMess = inMessage.getText().toLowerCase();
                 List<City> list = cityService.findByName(inMess);
+
                 String message = "";
+
                 if (!list.isEmpty()) {
+
                     message = list.get(0).getMessage();
                 } else {
                     message = "Извините, но про это город я ещё ничего не знаю. Но перейдя по этому адресу (https://testpst.herokuapp.com/) вы можете добавить" +

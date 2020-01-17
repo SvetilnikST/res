@@ -22,7 +22,11 @@ public class CityService {
     }
 
     public void save(City city) {
-        cityRepository.save(city);
+        City cityEdit = new City();
+        cityEdit.setId(city.getId());
+        cityEdit.setName(city.getName().toLowerCase());
+        cityEdit.setMessage(city.getMessage());
+        cityRepository.save(cityEdit);
     }
 
     public City get(long id) {
