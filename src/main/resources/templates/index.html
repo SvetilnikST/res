@@ -13,7 +13,6 @@
     <table border="1" cellpadding="10">
         <thead>
         <tr>
-            <th>City ID</th>
             <th>Name</th>
             <th>Message</th>
             <th>Action</th>
@@ -21,7 +20,6 @@
         </thead>
         <tbody>
         <tr th:each="city : ${listCities}">
-            <td th:text="${city.id}">City ID</td>
             <td th:text="${city.name}">Name</td>
             <td th:text="${city.message}">Message</td>
             <td>
